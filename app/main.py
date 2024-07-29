@@ -35,7 +35,7 @@ def create_shops(data: dict) -> list[Shop]:
 
 
 def shop_trip() -> None:
-    fuel_price, customers, shops = load_data(r"app\config.json")
+    fuel_price, customers, shops = load_data("app/config.json")
 
     for customer in customers:
         best_shop = None
