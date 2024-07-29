@@ -1,4 +1,4 @@
-from math import sqrt, dist
+from math import dist
 
 from app.customer import Customer
 
