@@ -13,7 +13,9 @@ class Shop:
     def calculate_distance(self, customer: Customer) -> float:
         shop_x, shop_y = self.location
         customer_x, customer_y = customer.location
-        distance = sqrt(((shop_x - customer_x) ** 2) + ((shop_y - customer_y) ** 2))
+        distance = sqrt(
+            ((shop_x - customer_x) ** 2)
+            + ((shop_y - customer_y) ** 2))
         return distance
 
     def print_receipt(self, customer: Customer) -> int | float:
@@ -29,3 +31,4 @@ class Shop:
         print(f"Total cost is {total_cost} dollars")
         print("See you again!\n")
         return total_cost
+
