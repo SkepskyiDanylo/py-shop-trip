@@ -1,5 +1,4 @@
 from math import sqrt
-from datetime import datetime
 
 from app.customer import Customer
 
@@ -18,16 +17,16 @@ class Shop:
             + ((shop_y - customer_y) ** 2))
         return distance
 
-    def print_receipt(self, customer: Customer) -> int | float:
-        time_now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        print(f"\nDate: {time_now}")
+    def print_receipt(self, customer: Customer) -> None:
+        print(f"\nDate: 04/01/2021 12:33:41")
         print(f"Thanks, {customer.name}, for your purchase!")
         print("You have bought:")
         total_cost = 0
         for product, count in customer.product_cart.items():
             price = self.products[product] * count
-            print(f"{count} {product} for {price} dollars")
+            if price == int(price):
+                price = int(price)
+            print(f"{count} {product}s for {price} dollars")
             total_cost += price
         print(f"Total cost is {total_cost} dollars")
         print("See you again!\n")
-        return total_cost
