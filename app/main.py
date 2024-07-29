@@ -20,19 +20,13 @@ def create_customers(data: dict) -> list[Customer]:
             customer["product_cart"],
             customer["location"],
             customer["money"],
-            Car(customer["car"]["brand"],
-                customer["car"]["fuel_consumption"])
+            Car(**customer["car"])
         )
         for customer in data]
 
 
 def create_shops(data: dict) -> list[Shop]:
-    return [
-        Shop(
-            shop["name"],
-            shop["location"],
-            shop["products"])
-        for shop in data]
+    return [Shop(** shop) for shop in data]
 
 
 def shop_trip() -> None:

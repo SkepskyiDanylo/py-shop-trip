@@ -21,5 +21,5 @@ class Customer:
         self.car = car
 
     def return_home(self, receipt: int | float) -> None:
-        print(f"{self.name} rides home")
-        print(f"{self.name} now has {receipt} dollars\n")
+        print(f"{self.name} rides home\n"
+              f"{self.name} now has {receipt} dollars\n")

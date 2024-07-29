@@ -18,9 +18,9 @@ class Shop:
         return distance
 
     def print_receipt(self, customer: Customer) -> None:
-        print("\nDate: 04/01/2021 12:33:41")
-        print(f"Thanks, {customer.name}, for your purchase!")
-        print("You have bought:")
+        print("\nDate: 04/01/2021 12:33:41\n"
+              f"Thanks, {customer.name}, for your purchase!\n"
+              "You have bought:")
         total_cost = 0
         for product, count in customer.product_cart.items():
             price = self.products[product] * count
@@ -28,5 +28,5 @@ class Shop:
                 price = int(price)
             print(f"{count} {product}s for {price} dollars")
             total_cost += price
-        print(f"Total cost is {total_cost} dollars")
-        print("See you again!\n")
+        print(f"Total cost is {total_cost} dollars\n"
+              "See you again!\n")
