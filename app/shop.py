@@ -1,4 +1,4 @@
-from math import sqrt
+from math import sqrt, dist
 
 from app.customer import Customer
 
@@ -10,12 +10,7 @@ class Shop:
         self.products = products
 
     def calculate_distance(self, customer: Customer) -> float:
-        shop_x, shop_y = self.location
-        customer_x, customer_y = customer.location
-        distance = sqrt(
-            ((shop_x - customer_x) ** 2)
-            + ((shop_y - customer_y) ** 2))
-        return distance
+        return dist(self.location, customer.location)
 
     def print_receipt(self, customer: Customer) -> None:
         print("\nDate: 04/01/2021 12:33:41\n"
