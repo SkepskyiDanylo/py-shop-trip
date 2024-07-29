@@ -1,6 +1,7 @@
 import json
 from app.customer import Customer, Car
 from app.shop import Shop
+from os import path
 
 
 def load_data(file_name: str) -> tuple:
@@ -35,7 +36,8 @@ def create_shops(data: dict) -> list[Shop]:
 
 
 def shop_trip() -> None:
-    fuel_price, customers, shops = load_data("app/config.json")
+    file_path = path.join("app", "config.json")
+    fuel_price, customers, shops = load_data(file_path)
 
     for customer in customers:
         best_shop = None
