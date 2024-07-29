@@ -18,7 +18,7 @@ class Shop:
         return distance
 
     def print_receipt(self, customer: Customer) -> None:
-        print(f"\nDate: 04/01/2021 12:33:41")
+        print("\nDate: 04/01/2021 12:33:41")
         print(f"Thanks, {customer.name}, for your purchase!")
         print("You have bought:")
         total_cost = 0

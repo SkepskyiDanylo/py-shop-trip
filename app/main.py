@@ -35,7 +35,7 @@ def create_shops(data: dict) -> list[Shop]:
 
 
 def shop_trip() -> None:
-    fuel_price, customers, shops = load_data("app\config.json")
+    fuel_price, customers, shops = load_data(r"app\config.json")
 
     for customer in customers:
         best_shop = None
@@ -61,6 +61,3 @@ def shop_trip() -> None:
         print(f"{customer.name} rides to {best_shop.name}")
         best_shop.print_receipt(customer)
         customer.return_home(customer.money - min_cost)
-
-
-shop_trip()
