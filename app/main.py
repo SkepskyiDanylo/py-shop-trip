@@ -41,8 +41,9 @@ def shop_trip() -> None:
             distance = shop.calculate_distance(customer)
             trip_cost = customer.car.calculate_trip(fuel_price, distance)
             products_cost = sum(
-                [shop.products.get(item, 0) * value
-                 for item, value in customer.product_cart.items()])
+                shop.products.get(item, 0) * value
+                for item, value in customer.product_cart.items()
+            )
             total_cost = trip_cost + products_cost
             print(f"{customer.name}'s trip "
                   f"to the {shop.name} costs {total_cost}")
