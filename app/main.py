@@ -20,13 +20,14 @@ def create_customers(data: dict) -> list[Customer]:
             customer["product_cart"],
             customer["location"],
             customer["money"],
-            Car(**customer["car"])
+            Car(**customer["car"]),
         )
-        for customer in data]
+        for customer in data
+    ]
 
 
 def create_shops(data: dict) -> list[Shop]:
-    return [Shop(** shop) for shop in data]
+    return [Shop(**shop) for shop in data]
 
 
 def shop_trip() -> None:
@@ -41,8 +42,11 @@ def shop_trip() -> None:
             distance = shop.calculate_distance(customer)
             trip_cost = customer.car.calculate_trip(fuel_price, distance)
             products_cost = sum(
-                [shop.products.get(item, 0) * value
-                 for item, value in customer.product_cart.items()])
+                [
+                    shop.products.get(item, 0) * value
+                    for item, value in customer.product_cart.items()
+                ]
+            )
             total_cost = trip_cost + products_cost
             print(f"{customer.name}'s trip "
                   f"to the {shop.name} costs {total_cost}")
@@ -51,8 +55,10 @@ def shop_trip() -> None:
                 best_shop = shop
                 min_cost = total_cost
         if min_cost > customer.money:
-            print(f"{customer.name} doesn't have "
-                  f"enough money to make a purchase in any shop")
+            print(
+                f"{customer.name} doesn't have "
+                f"enough money to make a purchase in any shop"
+            )
             continue
         print(f"{customer.name} rides to {best_shop.name}")
         best_shop.print_receipt(customer)
