@@ -25,4 +25,7 @@ class Shop:
                 price = int(price)
             print(f"{count} {product}s for {price} dollars")
             total_cost += price
-        print(f"Total cost is {total_cost} dollars\n" "See you again!\n")
+        print(
+            f"Total cost is {total_cost} dollars\n"
+            "See you again!\n"
+        )
